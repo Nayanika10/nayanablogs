@@ -1,0 +1,15 @@
+.jumbotron
+  .container
+    .row
+      .col-md-12.text-center
+        h1.text-primary Nayna Blogs
+        p.text-inverse Photography at its best
+        br
+        br
+        a.btn.btn-lg.btn-primary(ng-click='$ctrl.createPost()') Create New
+.section
+  .container
+    .row(ng-repeat='row in $ctrl.posts')
+      .col-md-12
+        h1.text-primary(style='cursor:pointer' ng-click="$ctrl.$state.go('posts.view', {id: row.url.split('/')[row.url.split('/').length - 2]})") {{row.title}}
+        p {{row.content}}

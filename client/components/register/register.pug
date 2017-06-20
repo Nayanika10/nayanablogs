@@ -1,0 +1,30 @@
+.section
+    .row(style='margin:0;padding:20px')
+      .col-md-12
+        form.form-horizontal( name='registerForm' ng-submit='$ctrl.submit()')
+          .form-group
+            .col-sm-2
+              label.control-label Username
+            .col-sm-10
+              input.form-control(type='email', placeholder='Username' ng-model='$ctrl.data.username' required)
+          .form-group
+            .col-sm-2
+              label.control-label Email
+            .col-sm-10
+              input.form-control(type='email', placeholder='Email' ng-model='$ctrl.data.email' required)
+          .form-group
+            .col-sm-2
+              label.control-label Email 2
+            .col-sm-10
+              input.form-control(type='email', placeholder='Email 2' ng-model='$ctrl.data.email2' required)
+          .form-group
+            .col-sm-2
+              label.control-label(for='inputPassword3') Password
+            .col-sm-10
+              input#inputPassword3.form-control(type='password', placeholder='Password' ng-model='$ctrl.data.password' required)
+          .form-group(ng-if='$ctrl.message')
+            .col-sm-2
+              label.control-label.text-danger(ng-bind='$ctrl.message')
+          .form-group
+            .col-sm-offset-2.col-sm-10
+              button.btn.btn-success(type='submit') Register

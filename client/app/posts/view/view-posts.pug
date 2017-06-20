@@ -1,0 +1,29 @@
+.section
+  .container
+    .row
+      .col-md-12
+        h1.text-center {{$ctrl.post.title}}
+.section
+  .container
+    .row
+      .col-md-12
+        p {{$ctrl.post.content}}
+.section
+  .container
+    .row
+      .col-md-12 {{$ctrl.post.user.username}}
+    .row(ng-if='$ctrl.user.username === $ctrl.post.user.username')
+      button.btn.btn-info(ng-click='$ctrl.editPost()') Edit
+      button.btn.btn-danger.m-l-xs.m-r-xs(ng-click='$ctrl.deletePost()') Delete
+.section.m-t-lg
+  .container
+    .row(ng-repeat='comment in $ctrl.comments')
+      .col-md-12 {{comment.content}}
+.section
+  .container
+    .row
+      .col-md-12
+        form(role='form' ng-submit='$ctrl.createComment()')
+          .form-group
+            textarea.form-control(placeholder='Comment goes here...' ng-model='$ctrl.data.content')
+          button.btn.btn-default(type='submit') Comment

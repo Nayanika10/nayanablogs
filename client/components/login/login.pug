@@ -1,0 +1,22 @@
+.section
+  .row(style='margin:0;padding:20px')
+    .col-md-12
+        form.form-horizontal(role='form' ng-submit='$ctrl.submit()')
+          .form-group
+            .col-sm-2
+              label.control-label Username
+            .col-sm-10
+              input.form-control(type='text', placeholder='Username', ng-model='$ctrl.data.username' required)
+          .form-group
+            .col-sm-2
+              label.control-label Email
+            .col-sm-10
+              input#inputEmail3.form-control(type='email', placeholder='Email', ng-model='$ctrl.data.email' required)
+          .form-group
+            .col-sm-2
+              label.control-label Password
+            .col-sm-10
+              input.form-control(type='password', placeholder='Password', ng-model='$ctrl.data.password' required)
+          .form-group
+            .col-sm-offset-2.col-sm-10
+              button.btn.btn-default(type='submit') LogIn

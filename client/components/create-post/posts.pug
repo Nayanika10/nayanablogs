@@ -1,0 +1,17 @@
+.section
+  .row(style='margin:0;padding:20px')
+    .col-md-12
+        form.form-horizontal(role='form' ng-submit='$ctrl.submit()')
+          .form-group
+            .col-sm-2
+              label.control-label Title
+            .col-sm-10
+              input.form-control(placeholder='Title', ng-model='$ctrl.data.title')
+          .form-group
+            .col-sm-2
+              label.control-label Content
+            .col-sm-10
+              textarea.form-control(style='height: 300px;', placeholder='Type you post here', ng-model='$ctrl.data.content')
+          .form-group
+            .col-sm-offset-2.col-sm-10
+              button.btn.btn-success(type='submit') Publish
