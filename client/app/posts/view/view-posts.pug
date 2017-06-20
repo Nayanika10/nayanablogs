@@ -8,17 +8,23 @@
     .row
       .col-md-12
         p {{$ctrl.post.content}}
+        hr
 .section
   .container
     .row
-      .col-md-12 {{$ctrl.post.user.username}}
+      .col-md-12 Posted by :
+        span(style='text-transform: uppercase;') {{$ctrl.post.user.username}}
     .row(ng-if='$ctrl.user.username === $ctrl.post.user.username')
       button.btn.btn-info(ng-click='$ctrl.editPost()') Edit
       button.btn.btn-danger.m-l-xs.m-r-xs(ng-click='$ctrl.deletePost()') Delete
 .section.m-t-lg
   .container
+    .row
+      .col-md-12.comment Comments
+      hr
+  .container
     .row(ng-repeat='comment in $ctrl.comments')
-      .col-md-12 {{comment.content}}
+      .col-md-12.comment {{comment.content}}
 .section
   .container
     .row

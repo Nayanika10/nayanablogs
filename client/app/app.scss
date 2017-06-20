@@ -16,9 +16,15 @@ $fa-font-path: '/assets/fonts/font-awesome/';
   padding: 0.2em 0;
 }
 
+.jumbotron {
+  background: #9b59b6;
+  color: #fff !important;
+}
+
 // Component styles are injected through gulp
 /* inject:scss */
 @import 'posts/list/list';
+@import 'posts/view/view-posts';
 @import '../components/footer/footer';
 @import '../components/modal/modal';
 /* endinject */
